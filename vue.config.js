@@ -1,3 +1,4 @@
+const registerRouter = require('./backend/router')
 module.exports = {
     css: {
         loaderOptions: {
@@ -9,5 +10,11 @@ module.exports = {
           `
             }
         }
-    }
+    },
+    devServer: {
+        before(app) {
+            registerRouter(app);
+        }
+    },
+
 }
